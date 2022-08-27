@@ -1,12 +1,11 @@
 import React from 'react'
 import Channel from './Channel'
-import channelsDataBase from './channelsDataBase'
 import './ChannelsList.css'
 
-const ChannelsList = () => {
+const ChannelsList = ({ filteredChannels }) => {
     return (
         <div className='list'>
-            {channelsDataBase.map((ch) =>
+            {filteredChannels.map((ch) =>
                 <Channel key={ch.channelNumber} channelNumber={ch.channelNumber} />
             )}
         </div>

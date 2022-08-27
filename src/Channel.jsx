@@ -19,14 +19,13 @@ const Channel = ({ channelNumber }) => {
         getThermoData();
     }, [])
 
-    console.log(channelNumber);
-
     return (
         <div className='card'>
             {
                 isLoading ? <p className='loading'>Loading...</p> : <>
-                    <p>{channelInfo.channel.name}</p>
+                    <h5>{channelInfo.channel.name}</h5>
                     <p className='value'>{channelInfo.feeds[0].field1}</p>
+                    <h5>{channelInfo.feeds[0].created_at}</h5>
                 </>
             }
         </div>
