@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import './Channel.css'
+
 const Channel = ({ channelNumber }) => {
 
     const [channelInfo, setChannelInfo] = useState({});
@@ -20,11 +22,11 @@ const Channel = ({ channelNumber }) => {
     console.log(channelNumber);
 
     return (
-        <div>
+        <div className='card'>
             {
-                isLoading ? <p>Waiting...</p> : <>
+                isLoading ? <p className='loading'>Loading...</p> : <>
                     <p>{channelInfo.channel.name}</p>
-                    <p>{channelInfo.feeds[0].field1}</p>
+                    <p className='value'>{channelInfo.feeds[0].field1}</p>
                 </>
             }
         </div>
