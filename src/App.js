@@ -40,7 +40,7 @@ const App = () => {
     <div className="App">
       <h3>Dekoplant Thermometers</h3>
 
-      <select onChange={locationHandler}>
+      <select className='select-btn' onChange={locationHandler}>
         <option value='all'>All</option>
         <option value='storage'>Storages</option>
         <option value='fridge'>Fridges</option>

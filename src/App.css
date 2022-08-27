@@ -12,3 +12,12 @@
   height: 100vh;
   background: #d7ffd9;
 }
+
+.select-btn {
+  background: #a5d6a7;
+  border: 0.2rem solid #75a478;
+  border-radius: 0.5rem;
+  width: 9rem;
+  height: 2rem;
+  font-size: 1rem;
+}
