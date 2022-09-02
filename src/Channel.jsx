@@ -34,7 +34,7 @@ const Channel = ({ channelNumber }) => {
             {
                 isLoading ? <p className='loading'>Loading...</p> : <>
                     <h5 className='no-select'>{channelInfo.channel.name}</h5>
-                    <p className='value no-select'>{channelInfo.feeds[0].field1}</p>
+                    <p className='temperature-value no-select'>{channelInfo.feeds[0].field1}</p>
                     {/* {channelInfo.feeds[0].created_at ? <h5>{dateWithOffset}</h5> : <p>No data yet</p>} */}
                 </>
             }
