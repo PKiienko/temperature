@@ -23,6 +23,10 @@
   font-size: 5rem;
 }
 
+.channel-name {
+  font-size: 1rem;
+}
+
 .no-select {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -47,12 +51,16 @@
   .card {
     flex-direction: row;
     justify-content: space-between;
-    width: 15rem;
+    width: 20rem;
     height: 3rem;
     margin: 0.2rem;
   }
 
   .temperature-value {
     font-size: 2rem;
+  }
+
+  .channel-name {
+    font-size: 1rem;
   }
 }
