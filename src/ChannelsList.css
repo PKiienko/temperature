@@ -5,3 +5,9 @@
   flex-wrap: wrap;
   background: #d7ffd9;
 }
+
+@media only screen and (max-width: 1300px) {
+  .list {
+    flex-direction: column;
+  }
+}

@@ -47,7 +47,9 @@
   .card {
     flex-direction: row;
     justify-content: space-between;
-    height: 5rem;
+    width: 15rem;
+    height: 3rem;
+    margin: 0.2rem;
   }
 
   .temperature-value {
