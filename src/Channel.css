@@ -1,5 +1,4 @@
-.card,
-.loading {
+.card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +12,21 @@
   border: 0.2rem solid #75a478;
 }
 
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .value {
   font-size: 5rem;
   margin: 0;
   padding: 0;
+}
+
+.card:hover {
+  background: #74c977;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+  transition: all 0.5s ease-in-out;
 }

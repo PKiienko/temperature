@@ -19,13 +19,23 @@ const Channel = ({ channelNumber }) => {
         getThermoData();
     }, [])
 
+    // setInterval(() => {
+    //     getThermoData()
+    // }, 60000)
+
+    // const isoStr1 = channelInfo.feeds[0].created_at;
+    // const date = new Date(isoStr1);
+    // const timestampWithOffset = date.getTime();
+    // const dateWithOffset = new Date(timestampWithOffset);
+    // console.log(dateWithOffset);
+
     return (
         <div className='card'>
             {
                 isLoading ? <p className='loading'>Loading...</p> : <>
                     <h5>{channelInfo.channel.name}</h5>
                     <p className='value'>{channelInfo.feeds[0].field1}</p>
-                    <h5>{channelInfo.feeds[0].created_at}</h5>
+                    {/* {channelInfo.feeds[0].created_at ? <h5>{dateWithOffset}</h5> : <p>No data yet</p>} */}
                 </>
             }
         </div>
