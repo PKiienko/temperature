@@ -1,11 +1,19 @@
-import React, { useState, useEffect } from 'react'
-
+import React, { useState, useEffect, useMemo } from 'react'
 import './Channel.css'
 
 const Channel = ({ channelNumber }) => {
 
-    const [channelInfo, setChannelInfo] = useState({});
+    const [channelInfo, setChannelInfo] = useState();
     const [isLoading, setIsLoading] = useState(true);
+
+    const dateWithOffset = useMemo(() => {
+        if (!channelInfo) return "";
+
+        const channelDate = channelInfo.feeds[0].created_at;
+        const date = new Date(channelDate);
+        const timestampWithOffset = date.getTime();
+        return new Date(timestampWithOffset).toString().slice(4, 21);
+    }, [channelInfo]);
 
     const getThermoData = async () => {
         setIsLoading(true);
@@ -13,33 +21,31 @@ const Channel = ({ channelNumber }) => {
         const data = await response.json();
         setChannelInfo(data);
         setIsLoading(false);
-    }
+    };
 
     useEffect(() => {
         getThermoData();
-    }, [])
-
-    // setInterval(() => {
-    //     getThermoData()
-    // }, 60000)
-
-    // const isoStr1 = channelInfo.feeds[0].created_at;
-    // const date = new Date(isoStr1);
-    // const timestampWithOffset = date.getTime();
-    // const dateWithOffset = new Date(timestampWithOffset);
-    // console.log(dateWithOffset);
+    }, []);
 
     return (
-        <div className='card'>
-            {
-                isLoading ? <p className='loading'>Loading...</p> : <>
-                    <h5 className='channel-name no-select'>{channelInfo.channel.name}</h5>
-                    <p className='temperature-value no-select'>{channelInfo.feeds[0].field1}</p>
-                    {/* {channelInfo.feeds[0].created_at ? <h5>{dateWithOffset}</h5> : <p>No data yet</p>} */}
+        <div className="card">
+            {isLoading ? (
+                <p className="loading">Loading...</p>
+            ) : (
+                <>
+                    <h5 className="channel-name no-select">
+                        {channelInfo.channel.name}
+                    </h5>
+                    <h5 className="channel-time no-select">
+                        {dateWithOffset}
+                    </h5>
+                    <p className="temperature-value no-select">
+                        {channelInfo.feeds[0].field1}
+                    </p>
                 </>
-            }
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default Channel

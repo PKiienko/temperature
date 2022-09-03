@@ -10,6 +10,7 @@
   background: #a5d6a7;
   border-radius: 1rem;
   border: 0.2rem solid #75a478;
+  transition: all 0.5s ease;
 }
 
 .loading {
@@ -23,7 +24,8 @@
   font-size: 5rem;
 }
 
-.channel-name {
+.channel-name,
+.channel-time {
   font-size: 1rem;
 }
 
@@ -44,7 +46,8 @@
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease;
+  transform: scale(1.05);
 }
 
 @media only screen and (max-width: 1300px) {
