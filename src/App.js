@@ -1,56 +1,130 @@
 import React, { useEffect, useState } from 'react';
+import { Link, Routes, Route } from 'react-router-dom';
+
 import ChannelsList from './ChannelsList';
-import channelsDataBase from './channelsDataBase'
+import Manual from './Manual';
+import channelsDataBase from './channelsDataBase';
+
+import { IoRefresh } from 'react-icons/io5';
+import { BsGear, BsCalendarDay, BsDisplay, BsStar } from 'react-icons/bs';
+import { AiOutlineLineChart, AiOutlineInfoCircle } from 'react-icons/ai';
+import { BiMap } from 'react-icons/bi';
+
 import './App.css';
 
+import Map from './Map';
+import Charts from './Charts';
+import Schedule from './Schedule';
+import Settings from './Settings';
+
 const App = () => {
+  const [refresh, setRefresh] = useState(true);
 
-  const [location, setLocation] = useState('all')
-  const [filteredChannels, setFilteredChannels] = useState([]);
-
-  useEffect(() => {
-    filterHandler();
-  }, [location])
-
-  const locationHandler = (e) => {
-    setLocation(e.target.value);
-  }
-
-  const filterHandler = () => {
-    switch (location) {
-      case 'storage':
-        setFilteredChannels(channelsDataBase.filter(channel => channel.location === 'storage'))
-        break;
-      case 'fridge':
-        setFilteredChannels(channelsDataBase.filter(channel => channel.location === 'fridge'))
-        break;
-      case 'packing_area':
-        setFilteredChannels(channelsDataBase.filter(channel => channel.location === 'packing_area'))
-        break;
-      case 'greenhouse':
-        setFilteredChannels(channelsDataBase.filter(channel => channel.location === 'greenhouse'))
-        break;
-      default:
-        setFilteredChannels(channelsDataBase);
-        break;
-    }
-  }
+  //fetch new data every 60 seconds
+  const autoRefresh = setInterval(() => {
+    setRefresh(!refresh);
+    clearInterval(autoRefresh);
+  }, 60000);
 
   return (
-    <div className="App">
-      <h3>Dekoplant Thermometers</h3>
+    <div className='App'>
+      <div className='app-header'>
+        <div className='app-header-logo'>
+          <h3>
+            <Link to='/'>Dekoplant Thermometers</Link>
+          </h3>
+        </div>
 
-      <select className='select-btn' onChange={locationHandler}>
-        <option value='all'>All</option>
-        <option value='storage'>Storages</option>
-        <option value='fridge'>Fridges</option>
-        <option value='packing_area'>Packing Areas</option>
-        <option value='greenhouse'>Greenhouses</option>
-      </select>
+        <div className='app-header-buttons'>
+          <>
+            <Link to='/'>
+              <BsDisplay
+                className='app-header-button'
+                size={'1.5rem'}
+              />
+            </Link>
+          </>
+          {/* <>
+            <Link to='/map'>
+              <BiMap
+                className='app-header-button'
+                size={'1.5rem'}
+              />
+            </Link>
+          </> */}
+          <>
+            <Link to='/charts'>
+              <AiOutlineLineChart
+                className='app-header-button'
+                size={'1.5rem'}
+              />
+            </Link>
+          </>
+          <>
+            <Link to='schedule'>
+              <BsCalendarDay
+                className='app-header-button'
+                size={'1.5rem'}
+              />
+            </Link>
+          </>
+          <>
+            <Link to='manual'>
+              <AiOutlineInfoCircle
+                className='app-header-button'
+                size={'1.5rem'}
+              />
+            </Link>
+          </>
+          {/* <>
+            <Link to='settings'>
+              <BsGear
+                className='app-header-button'
+                size={'1.5rem'}
+              />
+            </Link>
+          </> */}
+          <Link>
+            <IoRefresh
+              className='app-header-button'
+              size={'1.5rem'}
+              onClick={() => {
+                setRefresh(!refresh);
+                clearInterval(autoRefresh);
+              }}
+            />
+          </Link>
+        </div>
+      </div>
 
-      <ChannelsList filteredChannels={filteredChannels} />
+      <Routes>
+        <Route
+          path='/'
+          element={<ChannelsList refresh={refresh} />}
+        />
+        <Route
+          path='/map'
+          element={<Map />}
+        />
+        <Route
+          path='/charts'
+          element={<Charts />}
+        />
+        <Route
+          path='/schedule'
+          element={<Schedule />}
+        />
+        <Route
+          path='/settings'
+          element={<Settings />}
+        />
+        <Route
+          path='/manual'
+          element={<Manual />}
+        />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

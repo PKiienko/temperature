@@ -13,16 +13,31 @@
   transition: all 0.5s ease;
 }
 
+.cold {
+  background-color: rgb(187, 237, 254);
+  animation: blinking-cold 1s infinite;
+}
+
+.hot {
+  background-color: rgb(255, 136, 136);
+  animation: blinking-hot 1s infinite;
+}
+
+.hormal {
+  background-color: #a5d6a7;
+}
+
+.outdated {
+  background-color: rgb(176, 176, 176);
+  opacity: 0.5;
+}
+
 .loading,
 .channel-description {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.channel-description {
-  align-items: flex-start;
 }
 
 .temperature-value {
@@ -45,7 +60,7 @@
 }
 
 .card:hover {
-  background: #74c977;
+  /* background: #74c977; */
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
@@ -55,20 +70,31 @@
   transform: scale(1.05);
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 600px) {
   .card {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 20rem;
-    height: 3rem;
-    margin: 0.2rem;
+    width: 11rem;
+    height: 10rem;
   }
 
   .temperature-value {
-    font-size: 2rem;
+    font-size: 4rem;
   }
+}
 
-  .channel-name {
-    font-size: 1rem;
+@keyframes blinking-cold {
+  0% {
+    background-color: rgb(187, 237, 254);
+  }
+  100% {
+    background-color: rgb(101, 217, 255);
+  }
+}
+
+@keyframes blinking-hot {
+  0% {
+    background-color: rgb(255, 136, 136);
+  }
+  100% {
+    background-color: rgb(255, 88, 88);
   }
 }

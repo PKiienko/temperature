@@ -11,13 +11,38 @@
   flex-direction: column;
   height: 100vh;
   background: #d7ffd9;
+  font-family: 'Roboto', sans-serif;
 }
 
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 1rem;
+}
+
+.app-header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+
+.app-header-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+}
+
+.app-header-button,
 .select-btn {
-  background: #a5d6a7;
-  border: 0.2rem solid #75a478;
-  border-radius: 0.5rem;
-  width: 9rem;
-  height: 2rem;
-  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+a:any-link {
+  text-decoration: none;
+  color: inherit;
 }

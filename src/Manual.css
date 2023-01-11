@@ -1,0 +1,23 @@
+.manual-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manual-container img {
+  margin: 1rem;
+}
+
+.manual-description {
+  margin: 1rem;
+}
+
+.manual-description p {
+  margin: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .manual-container {
+    flex-direction: column;
+  }
+}
