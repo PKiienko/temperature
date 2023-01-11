@@ -11,7 +11,7 @@ const Manual = () => {
           alt=''
         />
       </div>
-      <div className='manual-description'>
+      <div className='manual-description no-select'>
         <p>1. Поточне значення температур.</p>
         <p>2. Графік архівних значень температури.</p>
         <p>3. Календар чергувань охорони.</p>

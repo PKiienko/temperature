@@ -55,7 +55,7 @@ const Charts = () => {
   return (
     <div className='charts'>
       <div className='buttons'>
-        <div className='buttons-period'>
+        <div className='buttons-period no-select'>
           <h4
             onClick={() => {
               setChartsResults('60&median=10');
