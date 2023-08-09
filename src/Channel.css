@@ -15,12 +15,14 @@
 
 .cold {
   background-color: rgb(187, 237, 254);
-  animation: blinking-cold 1s infinite;
+  border: 0.2rem solid rgb(13, 0, 255);
+  /* animation: blinking-cold 1s infinite; */
 }
 
 .hot {
   background-color: rgb(255, 136, 136);
-  animation: blinking-hot 1s infinite;
+  border: 0.2rem solid rgb(255, 0, 0);
+  /* animation: blinking-hot 1s infinite; */
 }
 
 .hormal {
@@ -62,10 +64,10 @@
 .card:hover {
   /* background: #74c977; */
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
   transition: all 0.2s ease;
   transform: scale(1.05);
 }
@@ -81,7 +83,7 @@
   }
 }
 
-@keyframes blinking-cold {
+/* @keyframes blinking-cold {
   0% {
     background-color: rgb(187, 237, 254);
   }
@@ -97,4 +99,4 @@
   100% {
     background-color: rgb(255, 88, 88);
   }
-}
+} */

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import './Channel.css';
 
 import sound from './assets/mixkit-phone-ring-bell-593.wav';
@@ -46,6 +46,7 @@ const Channel = ({ channelNumber, refresh, minT, maxT }) => {
     const data = await response.json();
     setChannelInfo(data);
     setIsLoading(false);
+    setBgEffect('');
   };
 
   useEffect(() => {
@@ -59,14 +60,10 @@ const Channel = ({ channelNumber, refresh, minT, maxT }) => {
       ) : (
         <>
           <div className='channel-description'>
-            <h5 className='channel-name no-select'>
-              {channelInfo.channel.name}
-            </h5>
+            <h5 className='channel-name no-select'>{channelInfo.channel.name}</h5>
             <h5 className='channel-time no-select'>{dateWithOffset}</h5>
           </div>
-          <p className='temperature-value no-select'>
-            {channelInfo.feeds[0].field1}
-          </p>
+          <p className='temperature-value no-select'>{channelInfo.feeds[0].field1}</p>
         </>
       )}
     </div>
