@@ -20,9 +20,9 @@ const Settings = ({ channelsDataBaseWithMinMax, setChannelsDataBaseWithMinMax })
   return (
     <div>
       <div className='columns'>
-        <h4 className='settings-title-name'>Name</h4>
-        <h4 className='settings-title-min'>Min</h4>
-        <h4 className='settings-title-max'>Max</h4>
+        <h4 className='settings-title-name'>Термометр</h4>
+        <h4 className='settings-title-min'>Мін.</h4>
+        <h4 className='settings-title-max'>Макс.</h4>
       </div>
       {channelsDataBaseWithMinMax.map((channel) => {
         return (

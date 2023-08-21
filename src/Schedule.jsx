@@ -100,11 +100,11 @@ const Schedule = () => {
       </div>
       {isScheduleShowing ? (
         <button className='close-schedule-btn' onClick={() => closeSchedule()}>
-          Close Full
+          Сховати весь
         </button>
       ) : (
         <button className='show-schedule-btn' onClick={() => openSchedule()}>
-          Show Full
+          Показати весь
         </button>
       )}
 
