@@ -1,9 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import './Channel.css';
 
-import sound from './assets/mixkit-phone-ring-bell-593.wav';
-
-const Channel = ({ channelNumber, refresh, minT, maxT }) => {
+const Channel = ({ channelNumber, refresh, filteredChannel }) => {
   const [channelInfo, setChannelInfo] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [bgEffect, setBgEffect] = useState('');
@@ -18,16 +16,15 @@ const Channel = ({ channelNumber, refresh, minT, maxT }) => {
     let currentTime = Date.now();
     let timeDelay = currentTime - timestampWithOffset;
 
-    if (parseFloat(channelInfo.feeds[0].field1) < parseFloat(minT)) {
+    if (parseFloat(channelInfo.feeds[0].field1) < parseFloat(filteredChannel.minT)) {
       setBgEffect('cold');
-      // new Audio(sound).play();
     }
-    if (parseFloat(channelInfo.feeds[0].field1) > parseFloat(maxT)) {
+    if (parseFloat(channelInfo.feeds[0].field1) > parseFloat(filteredChannel.maxT)) {
       setBgEffect('hot');
     }
     if (
-      parseFloat(channelInfo.feeds[0].field1) < parseFloat(minT) &&
-      parseFloat(channelInfo.feeds[0].field1) > parseFloat(maxT)
+      parseFloat(channelInfo.feeds[0].field1) > parseFloat(filteredChannel.minT) &&
+      parseFloat(channelInfo.feeds[0].field1) < parseFloat(filteredChannel.maxT)
     ) {
       setBgEffect('normal');
     }
@@ -46,7 +43,6 @@ const Channel = ({ channelNumber, refresh, minT, maxT }) => {
     const data = await response.json();
     setChannelInfo(data);
     setIsLoading(false);
-    setBgEffect('');
   };
 
   useEffect(() => {

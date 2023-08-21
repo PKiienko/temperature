@@ -20,7 +20,8 @@
 }
 
 .hot {
-  background-color: rgb(255, 136, 136);
+  /* background-color: rgb(255, 136, 136); */
+  background-color: #ff6347;
   border: 0.2rem solid rgb(255, 0, 0);
   /* animation: blinking-hot 1s infinite; */
 }

@@ -1,7 +1,7 @@
 const channelsDataBase = [
   {
-    name: 'storage_2',
-    ua_name: 'Склад №2 вулиця',
+    name: 'storage_1',
+    ua_name: 'Склад №1 вулиця',
     location: 'storage',
     position: 1,
     channelNumber: 618304,
@@ -78,7 +78,7 @@ const channelsDataBase = [
     location: 'fridge',
     position: 9,
     channelNumber: 635829,
-    minT: 0,
+    minT: -3,
     maxT: 26,
   },
 
@@ -88,7 +88,7 @@ const channelsDataBase = [
     location: 'fridge',
     position: 10,
     channelNumber: 634234,
-    minT: 0,
+    minT: -3,
     maxT: 26,
   },
 
@@ -98,7 +98,7 @@ const channelsDataBase = [
     location: 'fridge',
     position: 11,
     channelNumber: 630834,
-    minT: 0,
+    minT: -3,
     maxT: 26,
   },
   {
@@ -107,7 +107,7 @@ const channelsDataBase = [
     location: 'packing_area',
     position: 12,
     channelNumber: 635841,
-    minT: -10,
+    minT: -3,
     maxT: 26,
   },
   {
@@ -116,7 +116,7 @@ const channelsDataBase = [
     location: 'packing_area',
     position: 13,
     channelNumber: 635807,
-    minT: -10,
+    minT: -3,
     maxT: 26,
   },
   {
@@ -125,7 +125,7 @@ const channelsDataBase = [
     location: 'packing_area',
     position: 14,
     channelNumber: 634208,
-    minT: -10,
+    minT: -3,
     maxT: 26,
   },
   {
@@ -134,7 +134,7 @@ const channelsDataBase = [
     location: 'greenhouse',
     position: 15,
     channelNumber: 967984,
-    minT: -10,
+    minT: -3,
     maxT: 26,
   },
   {
@@ -143,7 +143,7 @@ const channelsDataBase = [
     location: 'greenhouse',
     position: 16,
     channelNumber: 972793,
-    minT: -10,
+    minT: -3,
     maxT: 26,
   },
   {
@@ -152,7 +152,7 @@ const channelsDataBase = [
     location: 'greenhouse',
     position: 17,
     channelNumber: 986377,
-    minT: -10,
+    minT: -3,
     maxT: 26,
   },
   {
@@ -161,7 +161,7 @@ const channelsDataBase = [
     location: 'greenhouse',
     position: 18,
     channelNumber: 987091,
-    minT: -10,
+    minT: -3,
     maxT: 26,
   },
 ];

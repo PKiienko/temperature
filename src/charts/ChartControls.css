@@ -1,0 +1,57 @@
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0 1rem 0;
+  flex-wrap: wrap;
+}
+
+.start-datetime-input,
+.end-datetime-input,
+.load-button,
+.select-channel-btn {
+  width: 10rem;
+  height: 2rem;
+  margin: 0.2rem;
+  padding: 0.1rem;
+  background: #a5d6a7;
+  border: 0.1rem solid black;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+.channel-title,
+.start-input-title,
+.end-input-title {
+  font-family: 'Roboto', sans-serif;
+}
+
+.datetime-inputs-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-datetime,
+.end-datetime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-channel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.arrow {
+  width: 1rem;
+}
+
+.load-button:active {
+  scale: 0.95;
+}

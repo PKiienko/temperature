@@ -1,8 +1,8 @@
 .columns {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 30rem;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .column_name {
@@ -11,10 +11,23 @@
 
 .column_max,
 .column_min {
-  width: 3rem;
-  height: 2rem;
+  width: 4rem;
+  height: 1.5rem;
   border: 0.1rem solid black;
   border-radius: 0.2rem;
   font-size: 1rem;
   background-color: #d7ffd9;
+  margin: 0.2rem 1rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.settings-title-name {
+  width: 10rem;
+}
+
+.settings-title-max,
+.settings-title-min {
+  width: 4rem;
+  margin: 0.2rem 1rem;
 }

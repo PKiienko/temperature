@@ -17,17 +17,21 @@
 .app-header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  margin: 1rem;
+  margin: 0 1rem;
 }
 
 .app-header-logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 60%;
+  justify-content: flex-start;
+  margin: 0 1rem;
+}
+
+.app-header-logo h3 {
+  margin: 0 0.5rem;
 }
 
 .app-header-buttons {
@@ -35,6 +39,7 @@
   align-items: center;
   justify-content: flex-start;
   width: auto;
+  margin: 0 1rem;
 }
 
 .app-header-button,
